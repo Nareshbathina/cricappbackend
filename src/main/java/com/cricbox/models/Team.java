@@ -5,17 +5,30 @@
  */
 package com.cricbox.models;
 
-/**
- *
- * @author user
- */
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Team")
 public class Team {
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
     String id;
+	@Column(name = "leagueid")
     String leagueId;
+	@Column(name = "Name")
     String name;
+	@Column(name = "code")
     String code;
+	@Column(name = "logopath")
     String logoPath;
+	@Column(name = "imagespath")
     String imagesPath;
+	@Column(name = "description")
      String description;
     public String getId() {
         return id;

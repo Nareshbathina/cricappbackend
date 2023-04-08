@@ -8,27 +8,48 @@ package com.cricbox.models;
 import com.cricbox.enums.PlayerType;
 import com.cricbox.enums.Zsign;
 
-/**
- *
- * @author user
- */
-public class Player {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "Player")
+public class Player {
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
     String id;
+	@Column(name = "teamid")
     String teamId;
+	@Column(name = "Name")
     String name;
+	@Column(name = "shortname")
     String ShortName;
+	@Column(name = "dob")
     String dob;
+	@Column(name = "sunsign")
     int sunSign;
+	@Column(name = "moonsign")
     int moonSign;
+	@Column(name = "type")
     int type;
+	@Column(name = "form")
     int form;
+	@Column(name = "level")
     int level;
+	@Column(name = "description")
     String description;
+	@Column(name = "country")
     String country;
+	@Column(name = "b1")
     String b1;
+	@Column(name = "b2")
     String b2;
+	@Column(name = "b3")
     String b3;
+	@Column(name = "b4")
     String b4;
     
     int planetId = -1;

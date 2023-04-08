@@ -7,36 +7,66 @@ package com.cricbox.models;
 
 import com.cricbox.enums.Zsign;
 
-/**
- *
- * @author user
- */
-public class Horoscope {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "Horoscope")
+public class Horoscope {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+	@Column(name = "date")
     String date;
+	@Column(name = "moonplace")
     int moonPlace;
+	@Column(name = "sunplace")
     int sunPlace;
+	@Column(name = "jupiterplace")
     int jupiterPlace;
+	@Column(name = "venusplace")
     int venusPlace;
+	@Column(name = "marsplace")
     int marsPlace;
+	@Column(name = "saturnplace")
     int saturnPlace;
+	@Column(name = "mercuryplace")
     int mercuryPlace;
+	@Column(name = "moontype")
     int moonType;
+	@Column(name = "aries")
     String aries;
+	@Column(name = "tarus")
     String tarus;
+	@Column(name = "gemini")
     String gemini;
+	@Column(name = "cancer")
     String cancer;
+	@Column(name = "leo")
     String leo;
+	@Column(name = "virgo")
     String virgo;
+	@Column(name = "libra")
     String libra;
+	@Column(name = "scorpio")
     String scorpio;
+	@Column(name = "sagittarius")
     String sagittarius;
+	@Column(name = "capricorn")
     String capricorn;
+	@Column(name = "aquarius")
     String aquarius;
+	@Column(name = "pisces")
     String pisces;
+	@Column(name = "sourcelink1")
     String sourceLink1;
+	@Column(name = "sourcelink2")
     String sourceLink2;
+	@Column(name = "sourcelink3")
     String sourceLink3;
 
     public int getId() {

@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cricbox.models.League;
-import com.cricbox.services.LeagueService;
+import com.cricbox.models.Player;
+import com.cricbox.services.PlayerService;
 
 
 @CrossOrigin("*")
 @RestController
-public class LeagueController {
+public class PlayerController {
 
 	 @Autowired
-	    private LeagueService service;
+	    private PlayerService service;
 	     
-	    @GetMapping("/leagues")
-	    public List<League> list(@RequestParam(required =false) Boolean cal) {
-	        return service.listAll();
+	    @GetMapping("/getAllPlayersByTeamId")
+	    public List<Player> getAllPlayersByTeamId(@RequestParam String teamId) {
+	        return service.getAllPlayersByTeamId(teamId);
 	    }
 	    
 }

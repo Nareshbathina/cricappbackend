@@ -13,28 +13,50 @@ import java.util.Date;
 
 import org.apache.commons.lang3.time.DateUtils;
 
-/**
- *
- * @author user
- */
-public class Match {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
+@Entity
+@Table(name = "matches")
+public class Match {
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
     String id;
+	@Column(name = "leagueid")
     String leagueId;
+	@Column(name = "team1id")
     String team1Id;
+	@Column(name = "team2id")
     String team2Id;
+	@Column(name = "team1playersinfo")
     String team1PlayersInfo;
+	@Column(name = "team2playersinfo")
     String team2PlayersInfo;
-    String date;
+	@Column(name = "date")
+	String date;
+	@Column(name = "venu")
     String venu;
+	@Column(name = "moonplace")
     String moonPlace;
+	@Column(name = "description")
     String description;
+	@Column(name = "result")
     String result;
+	@Column(name = "b1")
     String b1;
+	@Column(name = "b2")
     String b2;
+	@Column(name = "b3")
     String b3;
+	@Column(name = "b4")
     String b4;
-    //custom
+	
+	@Transient
     String title;
 
     public String getTitle() {
